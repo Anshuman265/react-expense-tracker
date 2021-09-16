@@ -1,8 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
-function App() {
-    const expenses = [
+const DUMMY_EXPENSES = [
         {
             id: 'e1',
             title: 'Oreo',
@@ -24,12 +23,18 @@ function App() {
         },
 
     ];
+const App = () => {
+    const [expenses,setExpenses] = useState(DUMMY_EXPENSES);
     //return React.createElement('div', {}, React.createElement(Expenses, { items: expenses }));
 
-    
+    const addExpenseHandler = (expense) => {
+        setExpenses((prevExpenses) => { //prevExpenses is the older snapshot of the state
+            return [expense,...prevExpenses];
+        });
+    };
     return (
     <div>
-        <NewExpense/>
+        <NewExpense onAddExpense={addExpenseHandler}/>
         <Expenses items={expenses} />
     </div>
     );
