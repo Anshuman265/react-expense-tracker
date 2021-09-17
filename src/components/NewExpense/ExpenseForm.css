@@ -33,3 +33,7 @@
     font-family: 'Montserrat';
     font-weight: bold;
 }
+
+.new-expense__actions button:hover{
+    background-color: #CCE2CB !important;
+}
