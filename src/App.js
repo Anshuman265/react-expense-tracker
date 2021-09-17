@@ -27,26 +27,7 @@ const DUMMY_EXPENSES = [
 const App = () => {
     const [expenses,setExpenses] = useState(DUMMY_EXPENSES);
     //return React.createElement('div', {}, React.createElement(Expenses, { items: expenses }));
-    /*
-        CODE FOR USING DJANGO BACKEND 
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [expenses,setExpenses] = useState([]);
-    useEffect(() => {
-        fetch("http://localhost:8000/api/expenses/")
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setIsLoaded(true);
-                    setExpenses(data);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-      }, [])
-      */
+
     const addExpenseHandler = (expense) => {
         setExpenses((prevExpenses) => { //prevExpenses is the older snapshot of the state
             return [expense,...prevExpenses];
@@ -79,5 +60,25 @@ const App = () => {
     );
     
 }
+*/
+/*
+        CODE FOR USING DJANGO BACKEND 
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [expenses,setExpenses] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:8000/api/expenses/")
+            .then(res => res.json())
+            .then(
+                (data) => {
+                    setIsLoaded(true);
+                    setExpenses(data);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+      }, [])
 */
 export default App;
